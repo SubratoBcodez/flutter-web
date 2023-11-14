@@ -55,12 +55,10 @@
       });
     });
   </script>
-  <script>window.addEventListener('beforeunload', (event) => {
-  // Cancel the event as stated by the standard.
-  event.preventDefault();
-  // Chrome requires returnValue to be set.
-  event.returnValue = '';
-});</script>
+  <script>window.onunload = function () {
+  alert('You are trying to leave.');
+  return false;
+}</script>
 
 </body>
 </html>
